@@ -1,0 +1,15 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Functioning Weather app using the Open Weather API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilsa/react-weather-app.git"
+  },
+  "author": "Guilherme Sa <guilsa001@gmail.com> (https://twitter.com/urubuz)",
+  "license": "MIT"
+}
