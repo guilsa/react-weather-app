@@ -20,7 +20,7 @@ module.exports = {
         loader: "babel-loader"
       }
     ]
-  }
+  },
   plugins: [HtmlWebpackPluginConfig],
   debug: true,
   devtool: '#eval-source-map'
