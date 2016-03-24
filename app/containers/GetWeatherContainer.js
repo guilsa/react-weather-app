@@ -1,15 +1,23 @@
 var React = require('react');
 var GetWeather = require('../components/GetWeather');
+var PropTypes = React.PropTypes;
 
 var GetWeatherContainer = React.createClass({
-  getInitialState: function(){
+  getDefaultProps: function(){
     return {
-      location: 'Winston-Salem, NC'
+      direction: 'column'
     }
   },
-  handleSubmitLocation: function(e){
-    e.preventDefault();
-    debugger
+  propTypes: {
+    direction: PropTypes.string
+  },
+  getInitialState: function(){
+    return {
+      location: ''
+    }
+  },
+  handleSubmitLocation: function(){
+    console.log(this.state.city)
   },
   handleUpdateLocation: function(e) {
     this.setState({
@@ -20,10 +28,15 @@ var GetWeatherContainer = React.createClass({
     return (
       <GetWeather
         location={this.state.location}
+        direction={this.props.direction}
         onSubmitLocation={this.handleSubmitLocation}
         onUpdateLocation={this.handleUpdateLocation}/>
     )
   }
 })
+
+// GetWeather.propTypes = {
+//   direction: PropTypes.string,
+// }
 
 module.exports = GetWeatherContainer;
