@@ -22,7 +22,8 @@ function Button (props) {
   return (
     <button type="submit"
       className="btn btn-success "
-      style={styles.button}>
+      style={styles.button}
+      onClick={props.onSubmitLocation}>
       {props.children}
     </button>
   )
@@ -44,7 +45,10 @@ function GetWeather (props) {
         <InputField
           onUpdateLocation={props.onUpdateLocation}
           location={props.location}/>
-        <Button onSubmit={props.onSubmitLocation}>Get Weather</Button>
+        <Button
+          onSubmitLocation={props.onSubmitLocation}>
+          Get Weather
+        </Button>
     </div>
   )
 }

@@ -13,13 +13,14 @@ var GetWeatherContainer = React.createClass({
   },
   getInitialState: function(){
     return {
-      location: ''
+      location: 'Winston-Salem, NC'
     }
   },
   handleSubmitLocation: function(){
-    console.log(this.state.city)
+    console.log("handleSubmitLocation");
   },
   handleUpdateLocation: function(e) {
+    console.log("handleUpdateLocation");
     this.setState({
       location: e.target.value
     });
