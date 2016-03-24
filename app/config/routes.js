@@ -3,15 +3,16 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
-var Nav = require('../components/Nav');
-var Home = require('../components/Home');
+var hashHistory = ReactRouter.hashHistory;
+var Main = require('../containers/Main');
+var HomeContainer = require('../containers/HomeContainer');
 
 var routes = (
-  <Router>
-    <Route path="/" component={Nav}>
-      <IndexRoute component={Home} />
+  <Router history={hashHistory}>
+    <Route path='/' component={Main}>
+      <IndexRoute component={HomeContainer} />
     </Route>
   </Router>
-);
+)
 
 module.exports = routes;
