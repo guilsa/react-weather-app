@@ -1,17 +1,18 @@
 var React = require('react');
+var Header = require('../components/Header');
 
 var styles = {
   container: {
     width: '100%',
     height: '92%'
-  }
+}
 }
 
 var Main = React.createClass({
   render: function () {
     return (
       <div style={styles.container}>
-        <h1>Main Header</h1>
+        <Header />
         {this.props.children}
       </div>
 
