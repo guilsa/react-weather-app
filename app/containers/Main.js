@@ -1,5 +1,4 @@
 var React = require('react');
-var Nav = require('../components/Nav');
 
 var styles = {
   container: {
@@ -7,7 +6,6 @@ var styles = {
     height: '92%'
   }
 }
-
 
 var Main = React.createClass({
   render: function () {
