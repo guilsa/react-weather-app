@@ -1,6 +1,7 @@
 var React = require('react');
 var GetWeather = require('../components/GetWeather');
 var PropTypes = React.PropTypes;
+var openWeatherHelpers = require('../utils/openWeatherHelpers');
 
 var GetWeatherContainer = React.createClass({
   getDefaultProps: function(){
@@ -17,7 +18,11 @@ var GetWeatherContainer = React.createClass({
     }
   },
   handleSubmitLocation: function(){
-    console.log("handleSubmitLocation");
+    openWeatherHelpers.getCurrentWeather(this.state.location)
+      .then(function(weather){
+        console.log(weather);
+        debugger
+      })
   },
   handleUpdateLocation: function(e) {
     console.log("handleUpdateLocation");
