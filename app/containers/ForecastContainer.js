@@ -25,7 +25,7 @@ var ForecastContainer = React.createClass({
     //     })
     //   }.bind(this))
     console.log(DATA.data.list); // forecast
-    console.log(DATA.data.city.name;); // city name
+    console.log(DATA.data.city.name); // city name
     this.setState({
       city: DATA.data.city.name,
       isLoading: false
