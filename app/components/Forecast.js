@@ -14,13 +14,14 @@ function Forecast (props) {
  }
   return (
     <div>
-      <h1>done loading</h1>
+      <h1>{props.city}</h1>
     </div>
   )
 }
 
 Forecast.propTypes = {
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  city: PropTypes.string.isRequired
 }
 
 module.exports = Forecast;
