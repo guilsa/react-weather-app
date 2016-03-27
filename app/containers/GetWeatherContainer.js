@@ -1,7 +1,6 @@
 var React = require('react');
 var GetWeather = require('../components/GetWeather');
 var PropTypes = React.PropTypes;
-var openWeatherHelpers = require('../utils/openWeatherHelpers');
 
 var GetWeatherContainer = React.createClass({
   contextTypes: {
