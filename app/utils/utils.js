@@ -2,6 +2,7 @@ function convertTemp (kelvin) {
   return (kelvin - 273.15)* 1.8000 + 32.00
 }
 
+// http://stackoverflow.com/questions/3818193/how-to-add-number-of-days-to-todays-date
 Date.prototype.addDays = function(days) {
     this.setDate(this.getDate() + parseInt(days));
     return this;
@@ -13,10 +14,10 @@ function getDate (n = 0) {
 }
 
 function formatGetDate(n = 0) {
-  var currentDateToString = getDate(n).toString();
-  var stringRegex = /^(.*? ){3}/;
-  var currentDate = currentDateToString.match(stringRegex)[0];
-  return currentDate.slice(0, currentDate.length - 1)
+  var getFullDate = getDate(n).toString();
+  var getWeekMonthDayRegex = /^(.*? ){3}/; //http://stackoverflow.com/questions/17004741/regex-how-to-delete-everything-before-the-third-empty-space-in-a-notepad-lin#17004755
+  var currentDate = getFullDate.match(getWeekMonthDayRegex)[0].trim();
+  return currentDate;
 }
 
 module.exports = {
