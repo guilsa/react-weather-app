@@ -20,13 +20,21 @@ var styles = {
     fontSize: 30,
     fontWeight: 100,
   },
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+    alignContent: 'flex-start',
+    alignItems: 'center'
+  },
   dayContainer: {
     display:'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    alignContent: 'flex-start',
-    alignItems: 'flex-start',
+    alignContent: 'center',
+    alignItems: 'center',
     paddingLeft: 50,
     paddingRight: 50,
   }
@@ -41,9 +49,9 @@ function Forecast (props) {
    )
  }
   return (
-    <div>
-      <h1 className="text-center" style={styles.header}>{props.forecast.data.city.name}</h1>
-      <h1 className="text-center" style={styles.title}>Select a day</h1>
+    <div style={styles.container}>
+      <h1 style={styles.header}>{props.forecast.data.city.name}</h1>
+      <h1 style={styles.title}>Select a day</h1>
       <div style={styles.dayContainer}>
         {
           props.forecast.data.list.map(function(item, index){

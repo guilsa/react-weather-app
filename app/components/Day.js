@@ -3,7 +3,7 @@ var PropTypes = React.PropTypes;
 var utils = require('../utils/utils');
 
 styles = {
-  box: {
+  container: {
     minWidth: 207,
     margin: 30,
     display:'flex',
@@ -30,7 +30,7 @@ function Day (props) {
 
   return (
     <div>
-      <div style={styles.box}>
+      <div style={styles.container}>
         <img style={styles.image} src={ "app/images/weather-icons/" + icon + ".svg" }/>
         <div style={styles.body}>
           {date}
