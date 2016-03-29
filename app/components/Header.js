@@ -1,7 +1,7 @@
 var React = require('react');
 var GetWeatherContainer = require('../containers/GetWeatherContainer');
 
-styles = {
+var styles = {
   container: {
     marginRight: '15px'
   },

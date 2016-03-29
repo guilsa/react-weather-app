@@ -2,7 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var utils = require('../utils/utils');
 
-styles = {
+var styles = {
   container: {
     minWidth: 207,
     margin: 30,

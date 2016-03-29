@@ -1,7 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
-styles = {
+var styles = {
   button: {
     margin: 10
   }
