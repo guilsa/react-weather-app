@@ -3,11 +3,6 @@ var PropTypes = React.PropTypes;
 var Loading = require('../components/Loading');
 var Day = require('./Day');
 
-var React = require('react');
-var PropTypes = React.PropTypes;
-var Loading = require('../components/Loading');
-var Day = require('./Day');
-
 var styles = {
   header: {
     paddingTop: 20,
@@ -55,8 +50,12 @@ function Forecast (props) {
       <div style={styles.dayContainer}>
         {
           props.forecast.data.list.map(function(item, index){
+            // debugger
             return (
-              <Day key={index} weather={item} />
+              <Day
+                key={index}
+                weather={item}
+                onClick={props.handleClick.bind(null, item)}/>
             );
           })
         }
@@ -67,7 +66,8 @@ function Forecast (props) {
 
 Forecast.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  forecast: PropTypes.object.isRequired
+  forecast: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired
 }
 
 module.exports = Forecast;

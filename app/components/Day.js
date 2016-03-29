@@ -27,21 +27,20 @@ styles = {
 function Day (props) {
   var icon = props.weather.weather[0].icon;
   var date = utils.getDate(props.weather.dt);
-
   return (
-    <div>
-      <div style={styles.container}>
-        <img style={styles.image} src={ "app/images/weather-icons/" + icon + ".svg" }/>
-        <div style={styles.body}>
-          {date}
+    <div onClick={props.onClick}>
+        <div style={styles.container}>
+          <img style={styles.image} src={ "app/images/weather-icons/" + icon + ".svg" }/>
+          <div style={styles.body}>
+            {date}
+          </div>
         </div>
-      </div>
     </div>
   )
 }
 
 Day.propTypes = {
-  weather: PropTypes.object.isRequired,
+  weather: PropTypes.object.isRequired
 }
 
 module.exports = Day;

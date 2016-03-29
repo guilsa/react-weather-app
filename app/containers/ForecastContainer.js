@@ -11,12 +11,24 @@ WINSTON = {"data":{"city":{"id":4499612,"name":"Winston-Salem","coord":{"lon":-8
 // Forecast has conditional logic of whether to show Load or results.
 
 var ForecastContainer = React.createClass({
+  contextTypes: {
+   router: React.PropTypes.object.isRequired
+  },
   getInitialState: function(){
     return {
       isLoading: true,
-      forecast: ""
+      forecast: "",
     }
   },
+  handleClick: function(weather){
+    this.context.router.push({
+      pathname: '/detail/' + this.props.routeParams.city,
+      state: {
+        weather: weather
+      }
+    });
+  },
+
   componentDidMount: function(){
     // Not sure if for this.props.params.city I should be using another comp's props
     // Or if it's ok to get URL param
@@ -38,7 +50,8 @@ var ForecastContainer = React.createClass({
       <div>
         <Forecast
           isLoading={this.state.isLoading}
-          forecast={this.state.forecast} />
+          forecast={this.state.forecast}
+          handleClick={this.handleClick}/>
       </div>
     )
   }
