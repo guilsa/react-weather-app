@@ -30,20 +30,18 @@ var ForecastContainer = React.createClass({
   },
 
   componentDidMount: function(){
-    // Not sure if for this.props.params.city I should be using another comp's props
-    // Or if it's ok to get URL param
-    // openWeatherHelpers.getFiveDayForecast(this.props.params.city)
-    //   .then(function(forecast){
-    //     console.log(JSON.stringify(forecast));
-    //     this.setState({
-    //       forecast: forecast,
-    //       isLoading: false
-    //     })
-    //   }.bind(this))
-    this.setState({
-      forecast: WINSTON,
-      isLoading: false
-    })
+    openWeatherHelpers.getFiveDayForecast(this.props.params.city)
+      .then(function(forecast){
+        console.log(JSON.stringify(forecast));
+        this.setState({
+          forecast: forecast,
+          isLoading: false
+        })
+      }.bind(this))
+    // this.setState({
+    //   forecast: WINSTON,
+    //   isLoading: false
+    // })
   },
   render: function () {
     return (
